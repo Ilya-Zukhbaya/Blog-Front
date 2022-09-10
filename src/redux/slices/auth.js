@@ -17,7 +17,7 @@ export const fetchRegister = createAsyncThunk('posts/fetchRegister', async (para
 });
 
 const initialState = {
-  data: null,
+  data: {},
   status: 'loading',
 };
 
@@ -26,13 +26,13 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logout: (state, action) => {
-      state.data = null;
+      state.data = {};
     },
   },
   extraReducers: {
     [fetchAuth.pending]: (state) => {
       state.status = 'loading';
-      state.data = null;
+      state.data = {};
     },
     [fetchAuth.fulfilled]: (state, action) => {
       state.status = 'loaded';
@@ -40,11 +40,11 @@ const authSlice = createSlice({
     },
     [fetchAuth.rejected]: (state) => {
       state.status = 'error';
-      state.data = null;
+      state.data = {};
     },
     [fetchAuthMe.pending]: (state) => {
       state.status = 'loading';
-      state.data = null;
+      state.data = {};
     },
     [fetchAuthMe.fulfilled]: (state, action) => {
       state.status = 'loaded';
@@ -52,11 +52,11 @@ const authSlice = createSlice({
     },
     [fetchAuthMe.rejected]: (state) => {
       state.status = 'error';
-      state.data = null;
+      state.data = {};
     },
     [fetchRegister.pending]: (state) => {
       state.status = 'loading';
-      state.data = null;
+      state.data = {};
     },
     [fetchRegister.fulfilled]: (state, action) => {
       state.status = 'loaded';
@@ -64,7 +64,7 @@ const authSlice = createSlice({
     },
     [fetchRegister.rejected]: (state) => {
       state.status = 'error';
-      state.data = null;
+      state.data = {};
     },
   },
 });
